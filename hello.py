@@ -1,4 +1,4 @@
 def hello(name: str):
-    message = 'Hello, ' + name + '!'
+    message = 'Hi, ' + name + '!'
 
     return message

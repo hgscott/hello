@@ -1,0 +1,26 @@
+name: Test-Hello
+
+# Run this every time anything is pushed to the repository
+on: push
+
+jobs:
+  test:
+    # The machine it runs on
+    runs-on: ubuntu-22.04
+
+    steps:
+      # Copy the repository onto that machine
+      - uses: actions/checkout@v7
+
+      # Put a known version of Python on it
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      # Install what the tests need
+      - name: Install dependencies
+        run: pip install pytest
+
+      # Run them
+      - name: Run tests
+        run: pytest

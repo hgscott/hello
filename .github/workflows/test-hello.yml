@@ -17,10 +17,6 @@ jobs:
         with:
           python-version: "3.11"
 
-      # Install what the tests need
-      - name: Install dependencies
-        run: pip install pytest
-
       # Run them
       - name: Run tests
-        run: pytest
+        run: python -m unittest
